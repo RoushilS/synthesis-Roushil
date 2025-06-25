@@ -27,16 +27,16 @@ import SynthesisBrain from "@/systems/simulation/synthesis_brain/SynthesisBrain"
 import { ContextData, ContextSupplier } from "@/ui/components/ContextMenuData"
 import { CustomOrbitControls } from "@/systems/scene/CameraControls"
 import GizmoSceneObject from "@/systems/scene/GizmoSceneObject"
-import {
-    ConfigMode,
-    setNextConfigurePanelSettings,
-} from "@/ui/panels/configuring/assembly-config/ConfigurePanelControls"
+// import {
+//     ConfigMode,
+//     setNextConfigurePanelSettings,
+// } from "@/ui/panels/configuring/assembly-config/ConfigurePanelControls"
 import { Global_OpenPanel } from "@/ui/components/GlobalUIControls"
-import {
-    ConfigurationType,
-    setSelectedConfigurationType,
-} from "@/ui/panels/configuring/assembly-config/ConfigurationType"
-import { SimConfigData } from "@/ui/panels/simulation/SimConfigShared"
+// import {
+//     ConfigurationType,
+//     setSelectedConfigurationType,
+// } from "@/ui/panels/configuring/assembly-config/ConfigurationType"
+// import { SimConfigData } from "@/ui/panels/simulation/SimConfigShared"
 import WPILibBrain from "@/systems/simulation/wpilib_brain/WPILibBrain"
 
 const DEBUG_BODIES = false
@@ -74,7 +74,7 @@ class MirabufSceneObject extends SceneObject implements ContextSupplier {
 
     private _intakePreferences: IntakePreferences | undefined
     private _ejectorPreferences: EjectorPreferences | undefined
-    private _simConfigData: SimConfigData | undefined
+    // private _simConfigData: SimConfigData | undefined
 
     private _fieldPreferences: FieldPreferences | undefined
 
@@ -120,9 +120,9 @@ class MirabufSceneObject extends SceneObject implements ContextSupplier {
         return this._ejectorPreferences
     }
 
-    get simConfigData() {
-        return this._simConfigData
-    }
+    // get simConfigData() {
+    //     return this._simConfigData
+    // }
 
     get fieldPreferences() {
         return this._fieldPreferences
@@ -522,7 +522,7 @@ class MirabufSceneObject extends SceneObject implements ContextSupplier {
                 this._intakePreferences.showZoneAlways = false
             }
             this._ejectorPreferences = robotPrefs.ejector
-            this._simConfigData = robotPrefs.simConfig
+            // this._simConfigData = robotPrefs.simConfig
         }
 
         this._fieldPreferences = PreferencesSystem.getFieldPreferences(this.assemblyName)
@@ -531,7 +531,7 @@ class MirabufSceneObject extends SceneObject implements ContextSupplier {
     public UpdateSimConfig(config: SimConfigData | undefined) {
         const robotPrefs = PreferencesSystem.getRobotPreferences(this.assemblyName)
         if (robotPrefs) {
-            this._simConfigData = robotPrefs.simConfig = config
+            // this._simConfigData = robotPrefs.simConfig = config
             PreferencesSystem.setRobotPreferences(this.assemblyName, robotPrefs)
             PreferencesSystem.savePreferences()
             ;(this._brain as WPILibBrain)?.loadSimConfig?.()

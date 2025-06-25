@@ -1,6 +1,6 @@
-import { useModalControlContext } from "@/ui/ModalContext"
-import { usePanelControlContext } from "@/ui/PanelContext"
-import { useToastContext } from "@/ui/ToastContext"
+// import { useModalControlContext } from "@/ui/ModalContext"
+// import { usePanelControlContext } from "@/ui/PanelContext"
+// import { useToastContext } from "@/ui/ToastContext"
 import { useEffect } from "react"
 import { setAddToast, setOpenModal, setOpenPanel } from "./GlobalUIControls"
 
@@ -14,33 +14,33 @@ import { setAddToast, setOpenModal, setOpenPanel } from "./GlobalUIControls"
  * @returns Global UI Component
  */
 function GlobalUIComponent() {
-    const { openModal } = useModalControlContext()
-    const { openPanel } = usePanelControlContext()
-    const { addToast } = useToastContext()
+    // const { openModal } = useModalControlContext()
+    // const { openPanel } = usePanelControlContext()
+    // const { addToast } = useToastContext()
 
-    useEffect(() => {
-        setOpenModal(openModal)
+    // useEffect(() => {
+    //     setOpenModal(openModal)
 
-        return () => {
-            setOpenModal(undefined)
-        }
-    }, [openModal])
+    //     return () => {
+    //         setOpenModal(undefined)
+    //     }
+    // }, [openModal])
 
-    useEffect(() => {
-        setOpenPanel(openPanel)
+    // useEffect(() => {
+    //     setOpenPanel(openPanel)
 
-        return () => {
-            setOpenPanel(undefined)
-        }
-    }, [openPanel])
+    //     return () => {
+    //         setOpenPanel(undefined)
+    //     }
+    // }, [openPanel])
 
-    useEffect(() => {
-        setAddToast(addToast)
+    // useEffect(() => {
+    //     setAddToast(addToast)
 
-        return () => {
-            setAddToast(undefined)
-        }
-    }, [addToast])
+    //     return () => {
+    //         setAddToast(undefined)
+    //     }
+    // }, [addToast])
 
     return <></>
 }

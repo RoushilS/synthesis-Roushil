@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { FaXmark } from "react-icons/fa6"
-import { useModalControlContext } from "@/ui/ModalContext"
-import { usePanelControlContext } from "@/ui/PanelContext"
+// import { useModalControlContext } from "@/ui/ModalContext"
+// import { usePanelControlContext } from "@/ui/PanelContext"
 import { motion } from "framer-motion"
 import logo from "@/assets/autodesk_logo.png"
-import { useToastContext } from "@/ui/ToastContext"
+// import { useToastContext } from "@/ui/ToastContext"
 import APS, { APS_USER_INFO_UPDATE_EVENT } from "@/aps/APS"
 import { UserIcon } from "./UserIcon"
 import { ButtonIcon, SynthesisIcons } from "./StyledComponents"
@@ -56,12 +56,12 @@ const variants = {
 }
 
 const MainHUD: React.FC = () => {
-    const { openModal } = useModalControlContext()
-    const { openPanel } = usePanelControlContext()
-    const { addToast } = useToastContext()
+    // const { openModal } = useModalControlContext()
+    // const { openPanel } = usePanelControlContext()
+    // const { addToast } = useToastContext()
     const [isOpen, setIsOpen] = useState(false)
 
-    setAddToast(addToast)
+    // setAddToast(addToast)
 
     const [userInfo, setUserInfo] = useState(APS.userInfo)
 
@@ -131,7 +131,7 @@ const MainHUD: React.FC = () => {
                     value={"Spawn Asset"}
                     icon={SynthesisIcons.Add}
                     larger={true}
-                    onClick={() => openPanel("import-mirabuf")}
+                    // onClick={() => openPanel("import-mirabuf")}
                 />
                 <Box
                     display="flex"
@@ -141,12 +141,12 @@ const MainHUD: React.FC = () => {
                     <MainHUDButton
                         value={"Configure Assets"}
                         icon={SynthesisIcons.Wrench}
-                        onClick={() => openPanel("configure")}
+                        // onClick={() => openPanel("configure")}
                     />
                     <MainHUDButton
                         value={"General Settings"}
                         icon={SynthesisIcons.Gear}
-                        onClick={() => openModal("settings")}
+                        // onClick={() => openModal("settings")}
                     />
                     {/** Will be coming soonish...tm */}
                     {/* <MainHUDButton
@@ -158,7 +158,7 @@ const MainHUD: React.FC = () => {
                         value={"Debug Tools"}
                         icon={SynthesisIcons.Bug}
                         onClick={() => {
-                            openPanel("debug")
+                            // openPanel("debug")
                         }}
                     />
                 </Box>
@@ -167,7 +167,7 @@ const MainHUD: React.FC = () => {
                         value={`Hi, ${userInfo.givenName}`}
                         icon={<UserIcon className="h-[20pt] m-[5pt] rounded-full" />}
                         larger={true}
-                        onClick={() => openModal("aps-management")}
+                        // onClick={() => openModal("aps-management")}
                     />
                 ) : (
                     <MainHUDButton
@@ -182,13 +182,13 @@ const MainHUD: React.FC = () => {
                     icon={SynthesisIcons.Gamepad}
                     larger={true}
                     onClick={() => {
-                        MatchMode.getInstance().isMatchEnabled()
-                            ? Global_AddToast?.(
-                                  "error",
-                                  "Match Mode Already Running",
-                                  "You can't start match mode if its already running"
-                              )
-                            : MatchMode.getInstance().start(openModal)
+                        // MatchMode.getInstance().isMatchEnabled()
+                        //     ? Global_AddToast?.(
+                        //           "error",
+                        //           "Match Mode Already Running",
+                        //           "You can't start match mode if its already running"
+                        //       )
+                        //     : MatchMode.getInstance().start(openModal)
                         setIsOpen(false)
                     }}
                 />

@@ -1,10 +1,10 @@
 import World from "@/systems/World"
-import { useTheme } from "@/ui/ThemeContext"
+// import { useTheme } from "@/ui/ThemeContext"
 
 const Skybox = () => {
-    const { currentTheme, themes } = useTheme()
+    // const { currentTheme, themes } = useTheme()
     if (World.SceneRenderer) {
-        World.SceneRenderer.UpdateSkyboxColors(themes[currentTheme])
+        // World.SceneRenderer.UpdateSkyboxColors(themes[currentTheme])
     }
     return <></>
 }
