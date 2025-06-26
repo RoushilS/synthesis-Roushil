@@ -84,6 +84,7 @@ function Synthesis() {
 
     const { currentTheme, applyTheme, defaultTheme } = useTheme()
 
+    
     useEffect(() => {
         applyTheme(currentTheme)
     }, [currentTheme, applyTheme])
