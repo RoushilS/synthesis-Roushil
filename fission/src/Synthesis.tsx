@@ -70,9 +70,7 @@ import AutoTestPanel from "./ui/panels/simulation/AutoTestPanel.tsx"
 import TouchControls from "./ui/components/TouchControls.tsx"
 import GraphicsSettings from "./ui/panels/GraphicsSettingsPanel.tsx"
 import MainMenuModal from "@/modals/MainMenuModal"
-import { SpawnCachedMira } from "./ui/panels/mirabuf/ImportMirabufPanel";
-import { GetCacheInfo } from "./ui/panels/mirabuf/ImportMirabufPanel.tsx"
-import { MiraType } from "./mirabuf/MirabufLoader.ts"
+
 
 function Synthesis() {
     const { openModal, closeModal, getActiveModalElement, registerModal, activeModalId } =
@@ -89,18 +87,7 @@ function Synthesis() {
         applyTheme(currentTheme)
     }, [currentTheme, applyTheme])
 
-    useEffect(() => {
-        const allFields = GetCacheInfo(MiraType.FIELD)
-        const displayField = allFields[0]
-        const allRobots = GetCacheInfo(MiraType.ROBOT)
-        const displayRobot = allRobots[0]
-        if (displayField) {
-            SpawnCachedMira(displayField, MiraType.FIELD)
-        }
-        if (displayRobot) {
-            SpawnCachedMira(displayRobot, MiraType.ROBOT)
-        }
-    }, [])
+
     const panelElements = getActivePanelElements()
     const modalElement = getActiveModalElement()
 
