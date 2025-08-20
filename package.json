@@ -1,0 +1,7 @@
+{
+  "name": "synthesis-Roushil",
+  "packageManager": "yarn@4.9.2",
+  "dependencies": {
+    "notistack": "^3.0.2"
+  }
+}
